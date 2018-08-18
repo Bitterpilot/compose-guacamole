@@ -5,6 +5,8 @@ services:
     hostname: db
     build:
       context: .
+      args:
+        GUAC_VERSION: ${GUACAMOLE_VERSION}
     restart: always
     volumes:
       - data:/var/lib/mysql
@@ -16,17 +18,17 @@ services:
 
   guacd:
     hostname: guacd
-    image: guacamole/guacd:0.9.12-incubating
+    image: guacamole/guacd:${GUACAMOLE_VERSION}
     restart: always
 
   guacamole:
-    image: guacamole/guacamole:0.9.12-incubating
+    image: guacamole/guacamole:${GUACAMOLE_VERSION}
     restart: always
     ports:
       - 8080:8080
-    links:
-      - guacd
+    depends_on:
       - db
+      - guacd
     environment:
       GUACD_HOSTNAME: guacd
       MYSQL_HOSTNAME: db
