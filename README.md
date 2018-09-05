@@ -1,5 +1,7 @@
 # compose-guacamole
 
+see allso https://www.tecmint.com/guacamole-access-remote-linux-windows-machines-via-web-browser/
+
 [Guacamole](https://guacamole.incubator.apache.org/) is a really useful tool,
 but can be difficult to setup properly. The deployment  process can be greatly
 simplified using docker containers, and orchestrated using `docker-compose`.
