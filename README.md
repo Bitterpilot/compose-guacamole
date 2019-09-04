@@ -1,9 +1,9 @@
 # compose-guacamole
 
-see allso https://www.tecmint.com/guacamole-access-remote-linux-windows-machines-via-web-browser/
+see also [guacamole-access-remote-linux-windows-machines-via-web-browser](https://www.tecmint.com/guacamole-access-remote-linux-windows-machines-via-web-browser/)
 
 [Guacamole](https://guacamole.incubator.apache.org/) is a really useful tool,
-but can be difficult to setup properly. The deployment  process can be greatly
+but can be difficult to set up properly. The deployment  process can be greatly
 simplified using docker containers, and orchestrated using `docker-compose`.
 
 This is a sample configuration for `docker-compose` that puts together all the components needed to deploy guacamole in a containerized environment. I merely fixed it and updated it to the newer official containers as of November 2017.
@@ -15,9 +15,9 @@ To update the version change `GUACAMOLE_VERSION` in `.env`.
 ## Usage
 
 Assuming you already have a working Docker installation and `docker-compose`,
-setup is really easy.
+set up is really easy.
 
-```
+```bash
 git clone git@github.com:BrowncoatShadow/compose-guacamole.git
 cd docker-compose-guacamole
 docker-compose up -d
@@ -42,7 +42,6 @@ before deploying this to anything resembling a production environment.
   remote connections that guacamole makes.
 - `guacamole_guacamole_1` - The guacamole client web application container that ties
   everything together and provides the front-end for the user.
-
 
 ## The Database Problem
 
